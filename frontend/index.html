@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#0a0a0f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Drained RCE Mobile</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo">
+        <span class="neon">Drained</span> RCE
+      </div>
+      <div class="header-status">
+        <span id="connection-status" class="status-badge online">● Online</span>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+      <div id="page-content"></div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <footer class="app-footer">
+      <button class="nav-btn" data-page="shop">
+        <span class="nav-icon">🛒</span>
+        <span class="nav-label">Shop</span>
+      </button>
+      <button class="nav-btn" data-page="teleport">
+        <span class="nav-icon">🌀</span>
+        <span class="nav-label">Teleport</span>
+      </button>
+      <button class="nav-btn" data-page="map">
+        <span class="nav-icon">🗺️</span>
+        <span class="nav-label">Map</span>
+      </button>
+      <button class="nav-btn" data-page="profile">
+        <span class="nav-icon">👤</span>
+        <span class="nav-label">Profile</span>
+      </button>
+    </footer>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toast-container"></div>
+
+  <!-- Modal Container -->
+  <div id="modal-container"></div>
+
+  <!-- Loading Overlay -->
+  <div id="loading-overlay" class="loading-overlay hidden">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Loading...</div>
+  </div>
+
+  <!-- Offline Banner -->
+  <div id="offline-banner" class="offline-banner hidden">
+    ⚠️ No internet connection. Some features may be unavailable.
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
