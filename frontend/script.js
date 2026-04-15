@@ -1,5 +1,5 @@
 // ========== CONFIGURATION ==========
-const API_BASE = 'https://drained-rce-api.workers.dev'; // CHANGE THIS to your worker URL
+const API_BASE = 'https://drained-rce-backend.onrender.com'; // CHANGE THIS to your worker URL
 
 // ========== APP STATE ==========
 let currentUser = null;
