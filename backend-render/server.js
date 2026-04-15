@@ -8,7 +8,10 @@ const { createClient } = require('@supabase/supabase-js');
 const { Rcon } = require('rcon-client');
 
 const app = express();
-app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
+app.use(cors({ 
+  origin: 'https://drained-rce-mobile.vercel.app', 
+  credentials: true 
+}));
 app.use(express.json());
 app.use(session({
   secret: process.env.SESSION_SECRET || 'keyboard cat',
