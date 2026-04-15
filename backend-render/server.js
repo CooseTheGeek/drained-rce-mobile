@@ -18,6 +18,9 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.get('/test', (req, res) => {
+  res.json({ message: 'Backend is alive!' });
+});
 
 // Supabase
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
