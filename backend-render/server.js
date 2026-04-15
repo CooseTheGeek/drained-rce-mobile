@@ -22,7 +22,7 @@ app.use(passport.session());
 // Supabase
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
 
-// RCON connection pool (simple)
+// RCON connection
 let rconClient = null;
 async function getRcon() {
   if (!rconClient || !rconClient.connected) {
@@ -120,7 +120,6 @@ app.post('/shop/purchase', async (req, res) => {
     await rcon.send(command);
     res.json({ success: true, newBalance });
   } catch (err) {
-    // Refund tokens on failure
     await supabase.from('users').update({ token_balance: req.user.token_balance }).eq('id', req.user.id);
     res.status(500).json({ error: 'RCON command failed' });
   }
